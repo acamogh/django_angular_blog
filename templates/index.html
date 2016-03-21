@@ -1,0 +1,74 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Blog</title>
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'css/blog.css' %}" rel="stylesheet">
+
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        {#        <script src="{% static 'js/angular.js' %}"></script>#}
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js" ></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
+        <script src="{% static 'js/cookies.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.0/ui-bootstrap.min.js"></script>
+        <script src="{% static 'js/app.js' %}"></script>
+        <script src="{% static 'js/controllers.js' %}"></script>
+        <script src="{% static 'js/pagination.js' %}"></script>
+
+    </head>
+
+
+    <body>
+        <div class="blog-masthead">
+            <div class="container">
+                <nav class="blog-nav">
+                    <a class="blog-nav-item {% ifequal request.path '/'  %}active{% endifequal %}" href=""><i class="fa fa-home">&nbsp Home</i></a>
+                    <a class="blog-nav-item {% ifequal request.path '/about/'  %}active{% endifequal %}" href=""><i class="fa fa-info-circle">&nbsp About</i></a>
+                    <a class="blog-nav-item {% ifequal request.path '/addPost/'  %}active{% endifequal %}" href=""><i class="fa fa-pencil">&nbsp Add Post</i></a>
+
+                </nav>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="blog-header">
+                <h1 class="blog-title">My First Blog</h1>
+                <p class="lead blog-description">Welcome to my blog.</p>
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-8 blog-main">
+                    <div ng-view></div>
+                </div><!-- /.blog-main -->
+                <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+
+                    <div class="sidebar-module">
+                        <h4>Archives</h4>
+                        <ol class="list-unstyled">
+                            <li><a href="#">March 2016</a></li>
+                        </ol>
+                    </div>
+                    <div class="sidebar-module">
+                        <h4>Elsewhere</h4>
+                        <ol class="list-unstyled">
+                            <li><a href="#">GitHub</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Facebook</a></li>
+                        </ol>
+                    </div>
+                </div><!-- /.blog-sidebar -->
+
+            </div><!-- /.row -->
+
+        </div>
+
+    </body>
+</html>

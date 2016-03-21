@@ -1,0 +1,11 @@
+
+<div class="blog-post" ng-repeat="x in data | startFrom:1">
+
+    <p class="blog-post-title" ><a href="#/{{ x.id }}">{{ x.title }}</a></p>
+    <p class="blog-post-meta"><i class="fa fa-clock-o">&nbsp{{ x.pub_date|date  }}</i> </p>
+    {{ x.description|cut:true:200:' ...'}}
+    <p><a href=>See more</a></p>
+    <hr />
+
+
+</div>

@@ -1,0 +1,21 @@
+<div class="blog-post">
+    <p class="blog-post-title">{{ post.title }}</p>
+    <p class="blog-post-meta"><i class="fa fa-clock-o">&nbsp {{ post.pub_date|date  }}</i> </p>
+    <span style="white-space: pre-line">{{ post.description }}</span>
+    <br />
+
+    <hr />
+    <h3>Previous Comments</h3>
+    <div ng-repeat="comment in title_comment">
+        {{ comment }}
+    </div>
+    <hr />
+    <div>
+        <form class="form-group-sm" ng-submit="comment_form()">
+            <h3>Add new comments:</h3><br />
+
+            <input data-ui-sref-opts="{reload: true}" class="form-control" type="text" ng-model="form_comment"><br>
+            <button type="submit" class="btn btn-block btn-primary" >Add Comment</button>
+        </form>
+    </div>
+</div>
