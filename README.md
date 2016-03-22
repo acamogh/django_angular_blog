@@ -31,7 +31,11 @@ You will be able to add posts here directly
 ##########    API ACCESS    ############
 ##########################################
 
-Api for post :- /api    Example: http://127.0.0.1:8000/api/
+Api for post :- /api    
 
-Api for comments :- /comments     Example: http://127.0.0.1:8000/comments/
+Example: http://127.0.0.1:8000/api/
+
+Api for comments :- /comments     
+
+Example: http://127.0.0.1:8000/comments/
 
