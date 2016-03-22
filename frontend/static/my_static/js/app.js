@@ -43,8 +43,12 @@ sampleApp.filter('cut', function () {
             return value + (tail || ' …');
         };
     });
-sampleApp.filter('startFrom',function(){
-    return function (data,start){
-        return data.slice(start);
-    }
-})
+
+sampleApp.filter('nlToArray', function() {
+  return function(text) {
+      if (text)
+        return text.replace(/\n/g, '\n\n');
+      else
+        return text;
+  };
+});

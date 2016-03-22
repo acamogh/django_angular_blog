@@ -1,7 +1,7 @@
 <div class="blog-post">
     <p class="blog-post-title">{{ post.title }}</p>
     <p class="blog-post-meta"><i class="fa fa-clock-o">&nbsp {{ post.pub_date|date  }}</i> </p>
-    <span style="white-space: pre-line">{{ post.description }}</span>
+    <span style="white-space: pre-line">{{ post.description|nlToArray  }}</span>
     <br />
 
     <hr />
