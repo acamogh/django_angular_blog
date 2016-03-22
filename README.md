@@ -1,5 +1,7 @@
 # django_angular_blogs
 
+##########    Installation    ############
+
 git clone git@github.com:acamogh/django_angular_blog.git
 
 create a virtual environement :- "virtualenv venv"
