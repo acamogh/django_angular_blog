@@ -8,4 +8,6 @@ source venv/bin/activate
 
 cd django_angular_blog
 
-pip install requirement.txt
+pip install -r req.txt
+
+python manage.py runserver

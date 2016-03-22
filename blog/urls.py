@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^comments/$', views.CommentList.as_view()),
     url(r'^comments/(?P<pk>[0-9]+)/$', views.CommentDetail.as_view()),
     url(r'^add_comments/$', views.add_comments),
+    url(r'^addPost/$', views.add_post, name='add_post'),
 ]

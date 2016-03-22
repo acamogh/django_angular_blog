@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from rest_framework import generics,authentication,viewsets,permissions
+import json
+
 from .models import Post,Comment
 from .serializer import PostSerializer,CommentSerializer
-import json
+from .forms import PostForm
 
 # Create your views here.
 def home (request):
@@ -43,3 +45,20 @@ def add_comments(request):
         com.save()
 
     return render(request, 'index.html', {})
+
+def add_post(request):
+    forms = PostForm
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        print form
+        if form.is_valid():
+            uncommit = form.save(commit=False)
+            title= form.cleaned_data['title']
+            description=form.cleaned_data['description']
+            form.save()
+            return redirect("home")
+        else:
+          print form.errors
+    else:
+        form = PostForm()
+    return render(request, "add_post.html", {'forms': forms})

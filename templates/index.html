@@ -28,9 +28,8 @@
         <div class="blog-masthead">
             <div class="container">
                 <nav class="blog-nav">
-                    <a class="blog-nav-item {% ifequal request.path '/'  %}active{% endifequal %}" href=""><i class="fa fa-home">&nbsp Home</i></a>
-                    <a class="blog-nav-item {% ifequal request.path '/about/'  %}active{% endifequal %}" href=""><i class="fa fa-info-circle">&nbsp About</i></a>
-                    <a class="blog-nav-item {% ifequal request.path '/addPost/'  %}active{% endifequal %}" href=""><i class="fa fa-pencil">&nbsp Add Post</i></a>
+                    <a class="blog-nav-item {% ifequal request.path '/'  %}active{% endifequal %}" href="/#/"><i class="fa fa-home">&nbsp Home</i></a>
+                    <a class="blog-nav-item {% ifequal request.path '/addPost/'  %}active{% endifequal %}" href="{% url 'add_post' %}"><i class="fa fa-pencil">&nbsp Add Post</i></a>
 
                 </nav>
             </div>
@@ -44,7 +43,7 @@
             </div>
 
             <div class="row">
-
+{% block blog_post %}{% endblock %}
                 <div class="col-sm-8 blog-main">
                     <div ng-view></div>
                 </div><!-- /.blog-main -->
